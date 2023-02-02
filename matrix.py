@@ -6,20 +6,43 @@ matrix = [[1,2,3],
 
 #                                           toTakeAnyElement
 # print(matrix[1][2])
-
-def newMatrix(matrix):
-    for arr in matrix:
-        for element in arr: #Проход циклом по матрице
-            print(element, end = ' ') #Замена ненужных [] and ,
-        print() #Перевод на другую строку, что парадоксально
+#
+# def newMatrix(matrix):
+#     for arr in matrix:
+#         for element in arr: #Проход циклом по матрице
+#             print(element, end = ' ') #Замена ненужных [] and ,
+#         print() #Перевод на другую строку, что парадоксально
 # newMatrix(matrix)
 
 
-def newSecondMatrix(matrix):
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            print(matrix[i][j], end = ' ')
-        print()
+# def newSecondMatrix(matrix):
+#     for i in range(len(matrix)):
+#         for j in range(len(matrix[i])):
+#             print(matrix[i][j], end = ' ')
+#         print()
 
-newSecondMatrix(matrix)
+# newSecondMatrix(matrix)
 
+# matrix[1][1] = 100
+# newSecondMatrix(matrix)
+
+
+# matrix[1][1] = 5
+
+
+#Таск - Двумерный список заполнить нулями
+def createMatrix(m, n): #строк #столбцов
+    theFutureMassive = []
+
+    for i in range(m):
+        internalMassive = []
+
+        for j in range(n):
+            internalMassive.append(0)
+
+        theFutureMassive.append(internalMassive)
+
+    return theFutureMassive
+
+
+print(createMatrix(5, 10))

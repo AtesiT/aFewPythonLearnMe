@@ -1,61 +1,12 @@
-# #                                                         matrix
-# # matrix = [[1,2,3],
-#           [4,5,6],
-#           [7,8,9]]
-# # print(matrix)
-#
-# #                                           toTakeAnyElement
-# # print(matrix[1][2])
-# #
-# # def newMatrix(matrix):
-# #     for arr in matrix:
-# #         for element in arr: #Проход циклом по матрице
-# #             print(element, end = ' ') #Замена ненужных [] and ,
-# #         print() #Перевод на другую строку, что парадоксально
-# # newMatrix(matrix)
-#
-#
-# # def newSecondMatrix(matrix):
-# #     for i in range(len(matrix)):
-# #         for j in range(len(matrix[i])):
-# #             print(matrix[i][j], end = ' ')
-# #         print()
-#
-# # newSecondMatrix(matrix)
-#
-# # matrix[1][1] = 100
-# # newSecondMatrix(matrix)
-#
-#
-# # # matrix[1][1] = 5
-# #
-# #
-# # #Таск - Двумерный список заполнить нулями
-# # def createMatrix(m, n): #строк #столбцов
-# #     theFutureMassive = []
-# #
-# #     for i in range(m):
-# #         internalMassive = []
-# #
-# #         for j in range(n):
-# #             internalMassive.append(0)
-# #
-# #         theFutureMassive.append(internalMassive)
-# #
-# #     return theFutureMassive
-# #
-# #
-# # print(createMatrix(5, 10))
-# #
-# #
-#
-
-
-
 # TheProjectOfGame
+MAX_LINES = 3
+
+
+
+# Ставка
 def deposit():
     while True:
-        amount = input('Ваша ставка? Р ')
+        amount = input('Ваша ставка? "Р" ')
         if amount.isdigit():
             amount = int(amount)
             if amount > 0:
@@ -66,4 +17,24 @@ def deposit():
             print('Введите число')
     return amount
 
-deposit()
+
+# Кол-во строк
+def get_number_of_lines():
+    while True:
+        lines = input('Кол-во строк для ставки (1-' + str(MAX_LINES) + ')? ')
+        if lines.isdigit():
+            lines = int(lines)
+            if 1 <= lines <= MAX_LINES:
+                break
+            else:
+                print('Количество строк должны быть допустимым')
+        else:
+            print('Введите число')
+    return lines
+
+def main():
+    balance = deposit()
+    lines = get_number_of_lines()
+    print(balance, lines)
+
+main()
